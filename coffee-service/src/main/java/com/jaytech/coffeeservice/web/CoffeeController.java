@@ -12,24 +12,26 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@RestController
-@RequestMapping("/coffees")
-@AllArgsConstructor
+// RSocket 을 이용한 컨트롤러로 변경 해보자
+
+//@RestController
+//@RequestMapping("/coffees")
+//@AllArgsConstructor
 public class CoffeeController {
-    private final CoffeeService coffeeService;
-
-    @GetMapping
-    Flux<Coffee> all() {
-        return coffeeService.getAllCoffees();
-    }
-
-    @GetMapping("/{id}")
-    Mono<Coffee> byId(@PathVariable String id) {
-        return coffeeService.getCoffeeById(id);
-    }
-
-    @GetMapping(value = "/{id}/orders", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    Flux<CoffeeOrder> orders(@PathVariable String id) {
-        return coffeeService.getOrdersForCoffee(id);
-    }
+//    private final CoffeeService coffeeService;
+//
+//    @GetMapping
+//    Flux<Coffee> all() {
+//        return coffeeService.getAllCoffees();
+//    }
+//
+//    @GetMapping("/{id}")
+//    Mono<Coffee> byId(@PathVariable String id) {
+//        return coffeeService.getCoffeeById(id);
+//    }
+//
+//    @GetMapping(value = "/{id}/orders", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+//    Flux<CoffeeOrder> orders(@PathVariable String id) {
+//        return coffeeService.getOrdersForCoffee(id);
+//    }
 }

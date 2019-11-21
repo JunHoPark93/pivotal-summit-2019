@@ -13,7 +13,8 @@ import javax.annotation.PostConstruct;
 public class CoffeeClient {
     private final WebClient webClient;
 
-    @PostConstruct
+    // step2 에서 RSocket을 이용한 예제로 변경
+    // @PostConstruct
     public void runIt() {
         webClient.get()
                 .uri("/coffees")
